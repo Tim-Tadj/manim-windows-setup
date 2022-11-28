@@ -53,3 +53,4 @@ Write-Host "manim name: $manimName"
 # create a new project
 . $manimPath init project $manimName 
 
+# some change
