@@ -7,6 +7,7 @@ if (Get-Command ffmpeg -ErrorAction SilentlyContinue) {
 } else {
     Write-Output "ffmpeg is not installed"
 }
+#test
 
 Write-Output "ffmpeg"
 $downloadUrl = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip"
