@@ -21,7 +21,7 @@ if (Test-Path $outfile) {
 }
 Expand-Archive ffmpeg.zip -DestinationPath .
 
-$ffmpegdir = Join-Path $PSScriptRoot ffmpeg
+$ffmpegdir = Join-Path $PSScriptRoot ffmpeg-
 # get the name of the folder
 $ffmpegFolder = Get-ChildItem -Path $ffmpegdir* | Select-Object -ExpandProperty Name
 
