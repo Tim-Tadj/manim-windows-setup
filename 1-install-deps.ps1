@@ -23,7 +23,7 @@ Expand-Archive ffmpeg.zip -DestinationPath $env:USERPROFILE
 # get the name of the folder
 $ffmpegFolder = Get-ChildItem -Path $env:USERPROFILE* | Select-Object -ExpandProperty Name
 # rename the folder
-$writefolder = $env:USERPROFILE\ffmpeg
+$writefolder = Join-Path $env:USERPROFILE ffmpeg
 Rename-Item -Path C:\$ffmpegFolder -NewName $writefolder
 # add ffmpeg to the path
 function Add-Path($Path) {
@@ -32,5 +32,6 @@ function Add-Path($Path) {
 }
 
 ""
+$binfolder = Join-Path $writefolder bin
 
 Add-Path $writefolder\bin
