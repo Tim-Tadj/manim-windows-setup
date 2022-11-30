@@ -25,6 +25,8 @@ $ffmpegdir = Join-Path $PSScriptRoot ffmpeg
 # get the name of the folder
 $ffmpegFolder = Get-ChildItem -Path $ffmpegdir* | Select-Object -ExpandProperty Name
 
+Write-Output $ffmpegFolder
+
 $ffmpegpath = Join-Path $PSScriptRoot $ffmpegFolder
 
 # rename the folder
