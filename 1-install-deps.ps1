@@ -34,7 +34,7 @@ Write-Output $ffmpegpath
 #mv to user/ffmpeg folder
 $newpath = Join-Path $env:USERPROFILE $ffmpegFolder
 
-Rename-Item $$ffmpegpath $newpath
+Rename-Item $ffmpegpath $newpath
 
 # add ffmpeg to the path
 function Add-Path($Path) {
