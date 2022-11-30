@@ -21,14 +21,15 @@ if (Test-Path $outfile) {
 }
 Expand-Archive ffmpeg.zip -DestinationPath ffmpeg
 
-$ffmpegdir = Join-Path $env:USERPROFILE ffmpeg
+$ffmpegdir = Join-Path $PSScriptRoot ffmpeg ffmpeg
 # get the name of the folder
-$ffmpegFolder = Get-ChildItem -Path ffmpeg\ffmpeg* | Select-Object -ExpandProperty Name
-Write-Output $PSScriptRoot
+$ffmpegFolder = Get-ChildItem -Path $ffmpegdir* | Select-Object -ExpandProperty Name
+
+$ffmpegpath = Join-Path $PSScriptRoot ffmpeg $ffmpegFolder
 
 # rename the folder
 $writefolder = Join-Path $env:USERPROFILE ffmpeg
-Rename-Item -Path C:\$ffmpegFolder -NewName $writefolder
+Rename-Item -Path C:\$ffmpegpath -NewName $writefolder
 # add ffmpeg to the path
 function Add-Path($Path) {
     $Path = [Environment]::GetEnvironmentVariable("PATH", "User") + [IO.Path]::PathSeparator + $Path
