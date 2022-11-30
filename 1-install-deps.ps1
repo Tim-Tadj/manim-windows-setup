@@ -24,7 +24,7 @@ Expand-Archive ffmpeg.zip -DestinationPath ffmpeg
 $ffmpegdir = Join-Path $env:USERPROFILE ffmpeg
 # get the name of the folder
 $ffmpegFolder = Get-ChildItem -Path ffmpeg\ffmpeg* | Select-Object -ExpandProperty Name
-Write-Output $ffmpegFolder
+Write-Output $PSScriptRoot
 
 # rename the folder
 $writefolder = Join-Path $env:USERPROFILE ffmpeg
