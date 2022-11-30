@@ -31,11 +31,16 @@ $ffmpegpath = Join-Path $PSScriptRoot $ffmpegFolder
 
 Write-Output $ffmpegpath
 
+#mv to user/ffmpeg folder
+$newpath = Join-Path $env:USERPROFILE $ffmpegFolder
+
+Rename-Item $$ffmpegpath $newpath
+
 # add ffmpeg to the path
 function Add-Path($Path) {
     $Path = [Environment]::GetEnvironmentVariable("PATH", "User") + [IO.Path]::PathSeparator + $Path
     [Environment]::SetEnvironmentVariable( "Path", $Path, "User" )
 }
-$binfolder = Join-Path $ffmpegpath bin
+$binfolder = Join-Path $newpath bin
 
 Add-Path $binfolder
