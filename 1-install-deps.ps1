@@ -9,7 +9,6 @@ if (Get-Command ffmpeg -ErrorAction SilentlyContinue) {
 }
 #testchange3
 
-Write-Output "ffmpeg"
 $downloadUrl = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip"
 $outfile = "ffmpeg.zip"
 #detect if files already exist
@@ -25,16 +24,12 @@ $ffmpegdir = Join-Path $PSScriptRoot ffmpeg-
 # get the name of the folder
 $ffmpegFolder = Get-ChildItem -Path $ffmpegdir* | Select-Object -ExpandProperty Name
 
-Write-Output $ffmpegFolder
 
 $ffmpegpath = Join-Path $PSScriptRoot $ffmpegFolder
-
-Write-Output $ffmpegpath
 
 #mv to user/ffmpeg folder
 $newpath = Join-Path $env:USERPROFILE $ffmpegFolder
 
-Write-Output $newpath
 
 Move-Item $ffmpegpath $newpath
 
@@ -46,5 +41,7 @@ function Add-Path($Path) {
 $binfolder = Join-Path $newpath bin
 
 Add-Path $binfolder
+
+Write-Output "after running script make sure to reload powershell for vscode with 'Debug: restart' in command pallete"
 
 # after running script make sure to reload powershell for vscode with "Debug: restart" in command pallete
