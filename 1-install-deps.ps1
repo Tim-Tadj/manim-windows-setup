@@ -46,3 +46,5 @@ function Add-Path($Path) {
 $binfolder = Join-Path $newpath bin
 
 Add-Path $binfolder
+
+# after running script make sure to reload powershell for vscode with "Debug: restart" in command pallete
