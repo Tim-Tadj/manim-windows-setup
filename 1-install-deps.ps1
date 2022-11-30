@@ -20,8 +20,10 @@ if (Test-Path $outfile) {
     Invoke-WebRequest -Uri $downloadUrl -OutFile $outfile
 }
 Expand-Archive ffmpeg.zip -DestinationPath $env:USERPROFILE
+
+$ffmpegdir = Join-Path $env:USERPROFILE ffmpeg
 # get the name of the folder
-$ffmpegFolder = Get-ChildItem -Path $env:USERPROFILE* | Select-Object -ExpandProperty Name
+$ffmpegFolder = Get-ChildItem -Path $ffmpegdir* | Select-Object -ExpandProperty Name
 # rename the folder
 $writefolder = Join-Path $env:USERPROFILE ffmpeg
 Rename-Item -Path C:\$ffmpegFolder -NewName $writefolder
