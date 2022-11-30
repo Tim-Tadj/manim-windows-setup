@@ -42,6 +42,4 @@ $binfolder = Join-Path $newpath bin
 
 Add-Path $binfolder
 
-Write-Output "after running script make sure to reload powershell for vscode with 'Debug: restart' in command pallete"
-
-# after running script make sure to reload powershell for vscode with "Debug: restart" in command pallete
+Write-Output "after running script make sure to reload powershell for vscode with 'Debug: restart' in the vscode command pallete"
