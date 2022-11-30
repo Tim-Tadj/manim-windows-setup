@@ -29,6 +29,8 @@ Write-Output $ffmpegFolder
 
 $ffmpegpath = Join-Path $PSScriptRoot $ffmpegFolder
 
+Write-Output $ffmpegpath
+
 # rename the folder
 $writefolder = Join-Path $env:USERPROFILE ffmpeg
 Rename-Item -Path C:\$ffmpegpath -NewName $writefolder
