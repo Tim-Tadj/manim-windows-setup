@@ -12,7 +12,7 @@ To allow the user to run powershell scripts run:
 ```terminal
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
 ```
-If these commands dont work this means your domain administrator is using the "Turn on Script Execution" group policy, you will not be able to change your execution policy at all. And you will need admin privlages to change the execution policy.
+If these commands don't work this means your domain administrator is using the "Turn on Script Execution" group policy, you will not be able to change your execution policy at all. And you will need admin privileges to change the execution policy.
 
 ## Running Installation scripts
 
@@ -26,14 +26,14 @@ If these commands dont work this means your domain administrator is using the "T
 
 3. Install manim environment
     ```terminal
-    .\2-install-manim.ps1
+    .\2-install-manim.ps1 <name-of-manim-env>
     ```
 
 4. Initialise a new project
 
     Make sure you are now in the manim environment you created in step 3 and the create-new-proj.ps1 script has been copied to this location.
     ```terminal
-    .\create-new-proj.ps1
+    .\create-new-proj.ps1 <project-name>
     ```
     You will be prompted for parameters during setup, use a frame rate of 60 and a resolution of 1080p all other parameters can be default (press ENTER for those).
 
